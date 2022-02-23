@@ -21,7 +21,7 @@ const routes: Route[] = [
   {
     component: SearchResultsPage,
     layout: Layout,
-    path: "/items?search=",
+    path: "/items",
   },
   {
     component: DetailsPage,

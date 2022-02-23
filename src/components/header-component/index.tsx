@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import React, { FC, useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, createSearchParams } from "react-router-dom";
 
 // @scripts
 import SearchComponent from "./Search";
@@ -21,7 +21,12 @@ const HeaderComponent: FC = () => {
   };
 
   const handleOnSubmit = () => {
-    // TODO - on submit logic
+    navigate({
+      pathname: "items",
+      search: `?${createSearchParams({
+        search: value,
+      })}`,
+    });
   };
 
   const onClickIcon = () => {

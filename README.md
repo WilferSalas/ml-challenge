@@ -17,7 +17,7 @@ Open a console (terminal) and create the **ml-challenge**'s folder. Once folder 
 
 ```bash
 # Clone project
-$ git clone https://github.com/WilferSalas/search-engine.git
+$ git clone https://github.com/WilferSalas/ml-challenge.git
 
 # Enter to project's folder
 $ cd ml-challenge

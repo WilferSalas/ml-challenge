@@ -8,7 +8,7 @@ import HeaderComponent from "../components/header-component";
 
 const Layout = () => (
   <Box id="layout">
-    <HeaderComponent />
+    <HeaderComponent id="layout" />
     <Outlet />
   </Box>
 );

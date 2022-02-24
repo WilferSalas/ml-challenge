@@ -12,7 +12,11 @@ import SearchComponent from "./Search";
 // @images
 import logo from "../../assets/images/logo.png";
 
-const HeaderComponent: FC = () => {
+export interface Props {
+  id: string;
+}
+
+const HeaderComponent: FC<Props> = ({ id }) => {
   const navigate = useNavigate();
   const [value, setValue] = useState<string>("");
 
@@ -34,7 +38,7 @@ const HeaderComponent: FC = () => {
   };
 
   return (
-    <AppBar elevation={0} position="static">
+    <AppBar elevation={0} id={id} position="static">
       <Toolbar variant="regular">
         <Container sx={{ display: "flex" }}>
           <Box

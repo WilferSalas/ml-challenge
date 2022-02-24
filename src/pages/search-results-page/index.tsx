@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
-import React, { useEffect } from "react";
+import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
@@ -15,6 +15,9 @@ import ProgressComponent from "../../components/progress-component";
 import ProductsNotFound from "./ProductsNotFound";
 import { useFetchSearchProducts } from "../../api";
 import { Tooltip } from "@mui/material";
+
+// @interfaces
+import { Product } from "../../interfaces";
 
 const SearchResultsPage = () => {
   const navigate = useNavigate();
@@ -45,7 +48,7 @@ const SearchResultsPage = () => {
   return (
     <Container id="search-results-page">
       <Paper sx={{ mt: 5 }}>
-        {data.items.map((item: any) => [
+        {data.items.map((item: Product) => [
           <Stack direction="row" spacing={2} key={item.id} sx={{ p: 2 }}>
             <Box
               alt={item.title}

@@ -13,6 +13,9 @@ import ProgressComponent from "../../components/progress-component";
 import ProductNotFound from "./ProductNotFound";
 import { useFetchProduct } from "../../api";
 
+// @interfaces
+import { Product } from "../../interfaces";
+
 const DetailsPage = () => {
   const { id } = useParams();
   const { data, isLoading } = useFetchProduct(id);
@@ -28,27 +31,36 @@ const DetailsPage = () => {
     currencyDisplay: "narrowSymbol",
   });
 
+  const {
+    condition,
+    description,
+    id: idProduct,
+    picture,
+    price: { amount },
+    sold_quantity,
+    title,
+  }: Product = data.item;
+
   return (
     <Paper component={Container} id="home-page" sx={{ mt: 5 }}>
       <Grid container sx={{ padding: 5 }}>
         <Grid item xs={8} justifyContent="center" sx={{ display: "flex" }}>
           <Box
             component="img"
-            alt={data.item.id}
-            src={data.item.picture}
+            alt={idProduct}
+            src={picture}
             sx={{ width: 400 }}
           />
         </Grid>
         <Grid item xs={4}>
           <Typography variant="subtitle1">
-            {data.item.condition === "new" ? "Nuevo" : "Usado"} -{" "}
-            {data.item.sold_quantity} vendidos
+            {condition === "new" ? "Nuevo" : "Usado"} - {sold_quantity} vendidos
           </Typography>
           <Typography gutterBottom variant="h5" sx={{ fontWeight: 600 }}>
-            {data.item.title}
+            {title}
           </Typography>
           <Typography gutterBottom variant="h4" sx={{ mb: 5 }}>
-            {formatter.format(data.item.price.amount)}
+            {formatter.format(amount)}
           </Typography>
           <Button color="secondary" fullWidth variant="contained">
             Comprar
@@ -58,7 +70,7 @@ const DetailsPage = () => {
           <Typography gutterBottom variant="h5">
             Descripcion del producto
           </Typography>
-          <Typography>{data.item.description}</Typography>
+          <Typography>{description}</Typography>
         </Grid>
       </Grid>
     </Paper>

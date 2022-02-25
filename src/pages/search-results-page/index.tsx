@@ -11,6 +11,7 @@ import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 // @scripts
+import BreadcrumbsComponent from "../../components/breadcrumbs-component";
 import ProgressComponent from "../../components/progress-component";
 import ProductsNotFound from "./ProductsNotFound";
 import { useFetchSearchProducts } from "../../api";
@@ -47,7 +48,8 @@ const SearchResultsPage = () => {
 
   return (
     <Container id="search-results-page">
-      <Paper sx={{ mt: 5 }}>
+      <BreadcrumbsComponent id="search-results-page" items={data.categories} />
+      <Paper>
         {data.items.map((item: Product) => [
           <Stack direction="row" spacing={2} key={item.id} sx={{ p: 2 }}>
             <Box
@@ -55,7 +57,7 @@ const SearchResultsPage = () => {
               component="img"
               onClick={() => handleOnClick(item.id)}
               src={item.picture}
-              sx={{ width: 150, cursor: "pointer" }}
+              sx={{ maxHeight: 150, cursor: "pointer" }}
             />
             <Box sx={{ p: 2 }}>
               <Stack direction="row">

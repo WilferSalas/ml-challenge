@@ -44,12 +44,12 @@ const DetailsPage = () => {
   return (
     <Paper component={Container} id="home-page" sx={{ mt: 5 }}>
       <Grid container sx={{ padding: 5 }}>
-        <Grid item xs={8} justifyContent="center" sx={{ display: "flex" }}>
+        <Grid item xs={7} justifyContent="center" sx={{ display: "flex" }}>
           <Box
             component="img"
             alt={idProduct}
             src={picture}
-            sx={{ width: 400 }}
+            sx={{ maxWidth: 400 }}
           />
         </Grid>
         <Grid item xs={4}>

@@ -29,10 +29,11 @@ const BreadcrumbsComponent: FC<Props> = ({ id, items }) => {
       {items?.map((item: string) => (
         <Link
           color="inherit"
+          data-testid="breadcrumb-link"
           key={item}
           onClick={() => handleOnClick(item)}
-          underline="hover"
           sx={{ cursor: "pointer" }}
+          underline="hover"
         >
           {item}
         </Link>

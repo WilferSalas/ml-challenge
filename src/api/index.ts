@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-const devClient = "http://localhost:3001/api";
+const devClient = "https://ml-challenge-api-v3.vercel.app/api";
 
 export const useFetchSearchProducts = (searchTerm: string | null) => {
   return useQuery(["products", searchTerm], () =>

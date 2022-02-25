@@ -46,7 +46,7 @@ const Search: FC<Props> = ({ id, onChange, onSubmit, value }) => (
     alignItems="center"
     direction="row"
     id={`search-component-${id}`}
-    sx={{ px: 8, width: "100%" }}
+    sx={{ px: [1, 8], width: "100%" }}
   >
     <CssTextField
       color={undefined}

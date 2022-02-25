@@ -53,17 +53,23 @@ const DetailsPage = () => {
       <BreadcrumbsComponent id="details-page" items={cachedData?.categories} />
       <Paper id="home-page">
         <Grid container sx={{ padding: 5 }}>
-          <Grid item xs={7} justifyContent="center" sx={{ display: "flex" }}>
+          <Grid
+            item
+            justifyContent="center"
+            md={7}
+            sx={{ display: "flex" }}
+            xs={12}
+          >
             <Box
               component="img"
               alt={idProduct}
               src={picture}
-              sx={{ maxWidth: 400 }}
+              sx={{ maxWidth: [200, 400] }}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <Typography variant="subtitle1">
-              {condition === "new" ? "Nuevo" : "Usado"} - {sold_quantity}
+              {condition === "new" ? "Nuevo" : "Usado"} - {sold_quantity}{" "}
               vendidos
             </Typography>
             <Typography gutterBottom variant="h5" sx={{ fontWeight: 600 }}>

@@ -40,13 +40,13 @@ const HeaderComponent: FC<Props> = ({ id }) => {
   return (
     <AppBar elevation={0} id={id} position="static">
       <Toolbar variant="regular">
-        <Container sx={{ display: "flex" }}>
+        <Container sx={{ alignItems: "center", display: "flex" }}>
           <Box
             alt="logo"
             component="img"
             onClick={onClickIcon}
             src={logo}
-            sx={{ cursor: "pointer", maxHeight: 50 }}
+            sx={{ cursor: "pointer", maxHeight: [30, 50] }}
           />
           <SearchComponent
             id="header-component"

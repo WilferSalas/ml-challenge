@@ -57,7 +57,13 @@ const SearchResultsPage = () => {
               component="img"
               onClick={() => handleOnClick(item.id)}
               src={item.picture}
-              sx={{ maxHeight: [110, 150], cursor: "pointer" }}
+              sx={{
+                height: [110, 150],
+                maxHeight: [110, 150],
+                width: [110, 150],
+                maxWidth: [110, 150],
+                cursor: "pointer",
+              }}
             />
             <Box sx={{ p: 2 }}>
               <Stack direction="row">
